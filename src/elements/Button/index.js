@@ -45,14 +45,14 @@ export default function Button(props) {
       );
     } else {
       return (
-        <link
+        <Link
           to={props.href}
           className={className.join(" ")}
           style={props.style}
           onClick={onClick}
         >
           {props.children}
-        </link>
+        </Link>
       );
     }
   }
