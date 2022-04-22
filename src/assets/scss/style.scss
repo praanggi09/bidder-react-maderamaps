@@ -57,7 +57,7 @@
     font-size: 26px;
     font-weight: 900;
     font-family: "Poppin", sans-serif;
-    color: #254bd8;
+    color: $logo;
     text-decoration: none;
     .text-gray-900{
         color: gray;
@@ -95,4 +95,24 @@ header{
             }
         }
     }
+}
+
+.icon-bar{
+    text-align: right;
+}
+
+.icon-dashboard{
+    text-align: center;
+    margin: 0 auto;
+    span{
+        opacity: 0.3;
+    }
+}
+
+.dashboard-title1{
+    color: $logo;
+}
+
+.dashboard-title2{
+    color: gray;
 }
