@@ -116,3 +116,55 @@ header{
 .dashboard-title2{
     color: gray;
 }
+
+.btn-next{
+    position: absolute;
+    top: 250px;
+    right: 40px;
+    background-color: internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    opacity: 0;
+    padding: 10px;
+}
+
+.btn-previous{
+    position: absolute;
+    top: 250px;
+    left: 20px;
+    opacity: 0;
+    background-color: internal-light-dark(rgb(239, 239, 239), rgb(59, 59, 59));
+    padding: 10px;
+}
+
+.card-list:hover .btn-next{
+    right: 30px;
+    opacity: 1;
+    transition: 1s;
+    -webkit-animation: pulse 1s infinite alternate;
+    animation: pulse 1s infinite alternate;
+}
+
+@-webkit-keyframes pulse {
+    from {right: 40px}  
+    to {right: 30px}  
+ }
+ @keyframes pulse {
+    from {right: 40px}  
+    to {right: 30px}  
+ }
+
+ .card-list:hover .btn-previous{
+    left: 30px;
+    opacity: 1;
+    transition: 1s;
+    -webkit-animation: pulseL 1s infinite alternate;
+    animation: pulseL 1s infinite alternate;
+ }
+
+ @-webkit-keyframes pulseL {
+    from {left: 40px}  
+    to {left: 30px}  
+ }
+ @keyframes pulseL {
+    from {left: 40px}  
+    to {left: 30px}  
+ }
