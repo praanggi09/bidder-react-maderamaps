@@ -13,7 +13,10 @@ export default class LandingPage extends Component {
         <Hero data={LandingPage.hero} />
         <div style={{marginTop:100}}></div>
         <LiveBid data={Data} />
+
+        <hr style={{margin:"5% 9%"}}></hr>
         <Categories data={Data.categories} />
+
         {/* <Header location={this.props.location}></Header> */}
         {/* <h1>test</h1> */}
       </>
