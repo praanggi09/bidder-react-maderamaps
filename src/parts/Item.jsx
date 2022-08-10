@@ -1,17 +1,10 @@
-import React, { useState } from "react";
-
+import React from "react";
 import Button from "../elements/Button";
-import ItemsCarousel from "react-items-carousel";
-import range from "lodash/range";
 import { numberWithCommas } from "../utils";
 
-export default function LiveBid(data) {
-
-  const [activeItemIndex, setActiveItemIndex] = useState(0);
-  const chevronWidth = 40;
-
+export default function Item({ data }) {
   return (
-    <section className="container pt-4" id="showMostPicked" style={{ marginBottom: '20px' }}>
+    <section className="container" id="showMostPicked" style={{ padding: '0', marginBottom: '20px' }}>
       <div
         className="row align-items-center card-list"
         style={{ position: "relative" }}
@@ -20,48 +13,12 @@ export default function LiveBid(data) {
 
         <div
           className="cardlist"
-          style={{ padding: `0 ${chevronWidth}px`, position: "relative" }}
+          style={{  position: "relative" }}
         >
-          <ItemsCarousel
-            requestToChangeActive={setActiveItemIndex}
-            activeItemIndex={activeItemIndex}
-            numberOfCards={4}
-            gutter={20}
-            leftChevron={
-              <button
-                className="btn-previous"
-                style={{ borderRadius: "100%", width: 40, height: 40 }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                  style={{ width: 12 }}
-                >
-                  <path d="M224 480c-8.188 0-16.38-3.125-22.62-9.375l-192-192c-12.5-12.5-12.5-32.75 0-45.25l192-192c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L77.25 256l169.4 169.4c12.5 12.5 12.5 32.75 0 45.25C240.4 476.9 232.2 480 224 480z" />
-                </svg>
-              </button>
-            }
-            rightChevron={
-              <button
-                className="btn-next"
-                style={{ borderRadius: "100%", width: 40, height: 40 }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 320 512"
-                  style={{ width: 12 }}
-                >
-                  <path d="M96 480c-8.188 0-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L242.8 256L73.38 86.63c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l192 192c12.5 12.5 12.5 32.75 0 45.25l-192 192C112.4 476.9 104.2 480 96 480z" />
-                </svg>
-              </button>
-            }
-            outsideChevron={false}
-            chevronWidth={chevronWidth}
-          >
-
-            {data.data.bid.map((bid, index) => {
+          <div className="row gap-3">
+            {data.map((bid, index) => {
               return <div
-                className="cardlive" key={index}
+                className="cardlive col-md-3" key={index}
                 style={{ height: 250, background: "#EEE" }}
               >
                 <div style={{ padding: 10 }}>
@@ -101,7 +58,7 @@ export default function LiveBid(data) {
 
 
 
-          </ItemsCarousel>
+          </div>
         </div>
 
 

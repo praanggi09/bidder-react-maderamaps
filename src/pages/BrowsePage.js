@@ -1,28 +1,27 @@
 import React, { Component } from "react";
 
-import Hero from "../parts/Hero";
+import Filter from "../parts/Filter";
 import Categories from "../parts/Categories";
-import FilterList from "../parts/FilterList";
-import Data from "../json/sample4.json";
-// import BrowseBy from "../parts/BrowseBy";
+import Item from "../parts/Item";
+import LiveBid from "../parts/LiveBid";
+import Data from "../json/all-item.json";
 
-
-export default class LandingPage extends Component {
+export default class BrowsePage extends Component {
   render() {
     return (
       <>
-        {/* <Header/> */}
-        <div className="col col-md-12 row">
-            <div className="col col-md-2" style={{padding:'40px 0px 0px 20px'}}>
-                <FilterList data={Data.categories} />
+        <div className="container" style={{paddingTop:"20px"}}>
+            <div className="row">
+                <div className="col-lg-3">
+                    <Filter data={BrowsePage.filter} />
+                </div>
+                <div className="col-lg-9">
+                    <Item data={Data.item} />
+                </div>
             </div>
-            <div className="col col-md-10">
-                <Categories data={Data.categories} />
-            </div>
+           
+     
         </div>
-        {/* <BrowseBy data={Data.categories} /> */}
-        {/* <Header location={this.props.location}></Header> */}
-        {/* <h1>test</h1> */}
       </>
     );
   }

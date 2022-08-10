@@ -40,16 +40,16 @@ const Filter = () => {
 
             <div className="form-group">
                 <small>Minimum Price Rp. <small dangerouslySetInnerHTML={{__html: numberWithCommas(rangeMin)}} /></small>
-                <input className="form-control" id="filterRangeMin" type="range" min="0" max="10000000" step={10000} onChange={(event) => handleChangeRangeMin(event)}></input><br></br>
+                <input className="form-control" id="filterRangeMin" type="range" min="0" max="9999999" step={10000} onChange={(event) => handleChangeRangeMin(event)}></input><br></br>
             </div>
 
             <div className="form-group">
-                <small>Maximum Price Rp. <small dangerouslySetInnerHTML={{__html: numberWithCommas(rangeMax)}} /></small>
-                <input className="form-control" id="filterRangeMax" type="range" min={rangeMin} max="10000000" step={10000} onChange={(event) => handleChangeRangeMax(event)}></input><br></br>
+                <small>Maximum Price Rp. <small dangerouslySetInnerHTML={{__html: (rangeMax < rangeMin)? numberWithCommas(rangeMin) : numberWithCommas(rangeMax)  }} /></small>
+                <input className="form-control" id="filterRangeMax" type="range" min={rangeMin} max="9999999" step={10000} onChange={(event) => handleChangeRangeMax(event)}></input><br></br>
             </div>
 
             <div className="form-group">
-                <Button className="btn px-5 form-control" hasShadow isPrimary type="submit">Filter</Button >
+                <Button className="btn px-5 form-control" hasShadow isPrimary type="button">Filter</Button >
             </div>
 
            
