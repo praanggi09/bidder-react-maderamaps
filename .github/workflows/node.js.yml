@@ -38,5 +38,7 @@ jobs:
         run: |
           cd ~/lab/apps/bidder-react-maderamaps
           git pull origin master
-          whoami
+          ~/.nvm/versions/node/v12.19.0/bin/npm install
+          ~/.nvm/versions/node/v12.19.0/bin/npm run build
+          cp -r ~/lab/apps/bidder-react-maderamaps/build/* /var/www/html/react/
           
